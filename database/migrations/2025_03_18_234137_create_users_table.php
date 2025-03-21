@@ -13,18 +13,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-                $table->string('Name')->notnull();
-                $table->string('Email')->unique();
-                $table->string('PhoneNumber')->notnull();
-                $table->string('Password')->min(8)->notnull();
-                $table->integer('Point')->default(0);
-               $table->unsignedBigInteger('StationID');
-                $table->unsignedBigInteger('Type_ID')->default(3);
-                $table->integer('VerfiyCode');
-                $table->integer('IsBloCked')->default(0);
-                 $table->timestamps();
-            //    $table->foreign('StationID')->references('StationID')->on('ChargingStations')->onDelete('cascade');
-               $table->foreign('Type_ID')->references('TypeID')->on('user_types')->onDelete('cascade');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('phoneNumber')->nullable();
+            $table->string('password');
+            $table->integer('point')->default(0);
+            $table->enum('role',['SystemAdmin', 'StationManager', 'Customer', 'Employee']);
+            $table->boolean('isBlocked')->default(false);
+            // $table->integer('VerfiyCode');
+            $table->timestamps();
+
         });
     }
 

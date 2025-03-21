@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\Customer\VehicleController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\SystemAdminController;
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::controller(SystemAdminController::class)->group(function () {
+    Route::get('/', 'showAdminDashboard')->middleware(Authenticate::class)->name('home');
+    Route::get('/customersMange','CustomerMange')->middleware(Authenticate::class)->name('customers.show');
+});
+
+
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/login',  'showLoginForm')->name('showlogin');
+    Route::post('/login', 'login')->name('login');
+    Route::post('/logout', 'logout')->name('logout');
 });
 
 

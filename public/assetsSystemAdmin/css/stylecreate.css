@@ -1,0 +1,89 @@
+body{
+   background-color: #000;
+   padding: 20px
+ }
+ .form {
+    direction: rtl; 
+   display: flex;
+   flex-direction: column;
+   align-self: center;
+   font-family: inherit;
+   gap: 15px;
+   padding-inline: 2em;
+   background-color: #171717;
+   border-radius: 20px;
+ }
+ 
+ .form-heading {
+   text-align: center;
+   margin: 0.8em;
+   color: #ff0000;
+   font-size: 2.2em;
+   background-color: transparent;
+   align-self: center;
+ }
+ 
+ .form-field {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5em;
+   border-radius: 10px;
+   padding: 0.6em;
+   border: none;
+   outline: none;
+   color: white;
+   background-color: #171717;
+   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+ }
+ 
+ .input-field {
+   background: none;
+   border: none;
+   outline: none;
+   width: 100%;
+   color: #ccd6f6;
+   padding: 0.5em;
+ }
+ 
+ .sendMessage-btn {
+   cursor: pointer;
+   margin-bottom: 3em;
+   padding: 1em;
+   border-radius: 10px;
+   border: none;
+   outline: none;
+   background-color: transparent;
+   color: #ff0000;
+   font-weight: bold;
+   outline: 1px solid #ff0000;
+   transition: all ease-in-out 0.3s;
+ }
+ 
+ .sendMessage-btn:hover {
+   transition: all ease-in-out 0.3s;
+   background-color: #ff0000;
+   color: #000;
+   cursor: pointer;
+   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+ }
+ 
+ .form-card1 {
+   background-image: linear-gradient(163deg, #ff0000 0%, #ff0000 100%);
+   border-radius: 22px;
+   transition: all 0.3s;
+ }
+ 
+ .form-card1:hover {
+   box-shadow: 0px 0px 30px 1px rgba(200, 0, 0, 0.3);
+ }
+ 
+ .form-card2 {
+   border-radius: 0;
+   transition: all 0.2s;
+ }
+ 
+ .form-card2:hover {
+   transform: scale(0.98);
+   border-radius: 20px;
+ }

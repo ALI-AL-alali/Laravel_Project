@@ -7,19 +7,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, HasApiTokens,  Notifiable;
+    use HasFactory,  Notifiable;
     protected $fillable = [
-      //  'UserID',
-        'Name',
-        'Email',
-        'Password',
-        'PhoneNumber',
+ 
+        'name',
+        'email',
+        'password',
+        'phoneNumber',
+        'role'
     ];
     protected $hidden = [
         'password',
@@ -32,3 +33,9 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 }
+
+
+
+
+
+

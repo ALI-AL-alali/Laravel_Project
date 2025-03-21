@@ -1,0 +1,59 @@
+
+:root {
+   --electric-blue: #1bd33a;
+   --power-yellow: #fbc531; 
+   --dark-bg:rgb(207, 180, 180); 
+}
+
+.flex{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+@keyframes station-glow {
+   0%, 100% { opacity: 0.8; } 
+   50% { opacity: 1; } 
+}
+.login-card {
+   width: 400px;
+   height: 400px;
+   background: rgba(32, 37, 33, 0.836); 
+   border: 2px solid var(--electric-blue); 
+   border-radius: 15px; 
+   box-shadow: 0 0 30px var(--electric-blue); 
+   backdrop-filter: blur(10px); 
+   transition: transform 0.3s; 
+}
+
+.form-control {
+   background: rgba(255,255,255,0.1); 
+   border: 1px solid var(--electric-blue); 
+   color: white !important; 
+   transition: all 0.3s; 
+}
+
+.form-control:focus { 
+   background: rgba(74, 28, 28, 0.2); 
+   box-shadow: 0 0 15px var(--electric-blue); 
+}
+
+.btn-charge {
+   background: linear-gradient(45deg, var(--electric-blue), var(--power-yellow)); 
+   border: none; 
+   position: relative; 
+   overflow: hidden; 
+}
+
+.btn-charge:hover { 
+   letter-spacing: 3px; 
+   transform: scale(1.05); 
+}
+.neon-text {
+   text-shadow: 0 0 10px var(--electric-blue), 
+                0 0 20px var(--electric-blue),
+                0 0 30px var(--electric-blue);
+}
+.vid{
+   width: 400px;
+   height: 400px;
+}
