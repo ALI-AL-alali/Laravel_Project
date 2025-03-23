@@ -17,7 +17,6 @@ class AuthController extends BaseController
     use AuthorizesRequests, ValidatesRequests ;
     public function register(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -37,7 +36,6 @@ class AuthController extends BaseController
             'message'=>'تاكد من كلمة السر انها لا تقل عن 8 احرف '
             ], 422);
         }
-
         $user = User::create([
           'UserId',
             'Name' => $request->name,
@@ -46,9 +44,7 @@ class AuthController extends BaseController
             'PhoneNumber' => $request->phone_number,
         ]);
        // $token = $user->createToken('auth_token')->plainTextToken;
-
         return response()->json(['message' => 'تمت عملية انشاء الحساب بنجاح اهلا بكم في تطبيقنا',
-
         'user' => $user,
         'token' => $user->createToken('auth_token')->plainTextToken
 
@@ -71,14 +67,10 @@ class AuthController extends BaseController
                         'email' => ['تاكد  من صحة الايميل و كلمة السر'],
                     ]);
                 }
-                 // $token = $user->createToken('auth_token')->plainTextToken;
                  //  $user->tokens()->delete();
-
                 return response()->json([
                     'user' => $user,
                  'token' => $user->createToken('auth_token')->plainTextToken
-
-
                 ],200);
             }
             catch (ValidationException $e) {
